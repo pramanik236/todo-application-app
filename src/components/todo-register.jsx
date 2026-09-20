@@ -18,7 +18,7 @@ export function ToDoRegister(props){
             email:''
         },
         onSubmit: (user)=> {
-            axios.post('http://localhost:3000/users', user)
+            axios.post('https://todo-application-app.onrender.com/users', user)
             .then(()=>{
                 alert('Registered Successfully..');
                 navigate("/login");
@@ -27,7 +27,7 @@ export function ToDoRegister(props){
     })
 
     function VerifyUserId(e){
-        axios.get(`http://localhost:3000/users`)
+        axios.get(`https://todo-application-app.onrender.com/users`)
         .then(response=>{
              let existingUser = response.data.find(user=> user.user_id===e.target.value);
              if(existingUser){
