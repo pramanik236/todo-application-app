@@ -18,15 +18,30 @@ export function ToDoRegister(props){
             email:''
         },
         onSubmit: (user)=> {
+            if(user.user_id.trim()===''|| user.user_name.trim() ===''|| user.password.trim() || user.email.trim() ==='')
+            {
+               alert("Please fill all fields");
+               return;
+            }
             axios.post('https://todo-application-app.onrender.com/users', user)
             .then(()=>{
                 alert('Registered Successfully..');
                 navigate("/login");
             })
+            .catch(error =>{
+                console.log(error);
+                alert("Registration failed !");
+            });
         }
     })
 
     function VerifyUserId(e){
+
+        if(e.target.value.trim()==='')
+        {
+           setMsg('Given User Id');
+           return;
+        }
         axios.get(`https://todo-application-app.onrender.com/users`)
         .then(response=>{
              let existingUser = response.data.find(user=> user.user_id===e.target.value);
@@ -48,14 +63,14 @@ export function ToDoRegister(props){
                 }
                 <dl>
                     <dt>User Id</dt>
-                    <dd><input type="text" onKeyUp={VerifyUserId} name="user_id" onChange={formik.handleChange} className="form-control" /></dd>
+                    <dd><input type="text" onKeyUp={VerifyUserId} name="user_id"  value={formik.values.user_id} onChange={formik.handleChange} className="form-control" /></dd>
                     <dd className={errorClass}>{msg}</dd>
                     <dt>User Name</dt>
-                    <dd><input type="text" name="user_name" onChange={formik.handleChange} className="form-control" /></dd>
+                    <dd><input type="text" name="user_name" value={formik.values.user_name} onChange={formik.handleChange} className="form-control" /></dd>
                     <dt>Password</dt>
-                    <dd><input type="password" name="password" onChange={formik.handleChange} className="form-control" /></dd>
+                    <dd><input type="password" name="password" value={formik.values.password} onChange={formik.handleChange} className="form-control" /></dd>
                      <dt>Email</dt>
-                    <dd><input type="email" name="email" onChange={formik.handleChange} className="form-control" /></dd>
+                    <dd><input type="email" name="email" value={formik.values.email} onChange={formik.handleChange} className="form-control" /></dd>
                 </dl>
                 <button type="submit" className="btn btn-primary w-100">Register</button>
             </form>
