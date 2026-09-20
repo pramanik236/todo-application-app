@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "user_id": "1001",
+      "user_name": "Pabitra",
+      "password": "aa",
+      "email": "pabitrapramanik820@gmail.com",
+      "id": "MF95Ao5T4rY"
+    },
+    {
+      "user_id": "1002",
+      "user_name": "pabitra Kuila",
+      "password": "Pabitra123",
+      "email": "pabitrapramanik820@gmail.com",
+      "id": "5QOzyg2Hris"
+    },
+    {
+      "user_id": "1003",
+      "user_name": "pabit",
+      "password": "pabit123",
+      "email": "pabitrapramanik820@gmail.com",
+      "id": "WGf3lEtuD30"
+    },
+    {
+      "user_id": "1004",
+      "user_name": "rama",
+      "password": "rama123",
+      "email": "rama234@gmail.com",
+      "id": "s8sHHr3DM28"
+    }
+  ],
+  "appointments": [
+    {
+      "title": "metting",
+      "description": "metting with client",
+      "date": "2026-06-28",
+      "user_id": "1004",
+      "id": "HDO3qzICiik"
+    },
+    {
+      "title": "Metting",
+      "description": "metting with client ",
+      "date": "2026-09-18",
+      "user_id": 1001,
+      "id": "-HnUZFEQPoQ"
+    },
+    {
+      "title": "Interview",
+      "description": "Fresher for interview",
+      "date": "2026-09-19",
+      "user_id": 1002,
+      "id": "F4UrCnG6gAc"
+    },
+    {
+      "title": "Business",
+      "description": "Business for new project",
+      "date": "2026-09-19",
+      "user_id": 1003,
+      "id": "wtJrv3oxhBY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
