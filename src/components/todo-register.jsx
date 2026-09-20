@@ -18,11 +18,13 @@ export function ToDoRegister(props){
             email:''
         },
         onSubmit: (user)=> {
-            if(user.user_id.trim()===''|| user.user_name.trim() ===''|| user.password.trim() || user.email.trim() ==='')
+            
+            if(user.user_id.trim()===''|| user.user_name.trim() ===''|| user.password.trim()==='' || user.email.trim() ==='')
             {
                alert("Please fill all fields");
                return;
             }
+
             axios.post('https://todo-application-app.onrender.com/users', user)
             .then(()=>{
                 alert('Registered Successfully..');
