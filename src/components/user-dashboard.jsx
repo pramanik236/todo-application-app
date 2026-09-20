@@ -38,7 +38,7 @@ export function ToDoDashboard() {
          user_id: cookies['userid']
       },
       onSubmit: (appointment) => {
-         axios.post('http://localhost:3000/appointments', appointment)
+         axios.post('https://todo-application-app.onrender.com/appointments', appointment)
             .then(() => {
                LoadAppointments();
             })
@@ -55,16 +55,16 @@ export function ToDoDashboard() {
          user_id: editAppointment.user_id,
       },
       onSubmit: (appointment) => {
-         axios.put(`http://localhost:3000/appointments/${appointment.id}`, appointment)
+         axios.put(`https://todo-application-app.onrender.com/appointments/${appointment.id}`, appointment)
             .then(() => {
                LoadAppointments();
             })
       },
       enableReinitialize: true
    })
-
+////"api": "npx json-server db.json"
    const LoadAppointments = useCallback(() => {
-      axios.get('http://localhost:3000/appointments')
+      axios.get('https://todo-application-app.onrender.com/appointments')
          .then(response => {
 
             // console.log("All appointments:", response.data);
@@ -105,7 +105,7 @@ export function ToDoDashboard() {
    }
 
    const handleEditClick = useCallback((id) => {
-      axios.get(`http://localhost:3000/appointments/${id}`)
+      axios.get(`https://todo-application-app.onrender.com/appointments/${id}`)
          .then(response => {
             setEditAppointment(response.data);
          })
@@ -115,7 +115,7 @@ export function ToDoDashboard() {
    function handleDeleteClick(id) {
       let choice = confirm('Are you sure?\nWant to Delete');
       if (choice === true) {
-         axios.delete(`http://localhost:3000/appointments/${id}`)
+         axios.delete(`https://todo-application-app.onrender.com/appointments/${id}`)
             .then(response=> {
 
                LoadAppointments();
