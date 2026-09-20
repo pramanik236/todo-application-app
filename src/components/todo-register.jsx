@@ -39,7 +39,7 @@ export function ToDoRegister(props){
 
         if(e.target.value.trim()==='')
         {
-           setMsg('Given User Id');
+           setMsg('');
            return;
         }
         axios.get(`https://todo-application-app.onrender.com/users`)
