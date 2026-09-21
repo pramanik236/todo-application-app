@@ -313,10 +313,12 @@ box-shadow:  20px 20px 60px #bebebe,
 
 /* Mobile */
 @media (max-width: 480px) {
+
     .fontsizefornew {
         width: 100%;
         font-size: 14px;
-        padding: 10px;
-        margin: 5px 0 !important;
+        padding: 8px 10px;
+        margin: 0 !important;
     }
+
 }
