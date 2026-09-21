@@ -21,8 +21,12 @@ export function ToDoLogin(props){
                 if(loginUser)
                 {
                  if(loginUser.password===user.password){
-                   setCookie('userid',loginUser.user_id);
-                   setCookie('username',loginUser.user_Name);
+
+                     console.log("Login User:", loginUser);
+                     console.log("User Name:", loginUser.user_name);
+
+                   setCookie('userid',loginUser.user_id, { path: '/' });
+                   setCookie('username',loginUser.user_name, { path: '/' });
                    navigate('/dashboard');
                  } else {    
                         alert('Invalid Password');

@@ -299,3 +299,24 @@ box-shadow:  20px 20px 60px #bebebe,
   font-size: 15px;
 }
 }
+.fontsizefornew {
+    white-space: nowrap;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .fontsizefornew {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .fontsizefornew {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+        margin: 5px 0 !important;
+    }
+}

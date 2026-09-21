@@ -18,7 +18,7 @@ import '../App.css';
 
 export function ToDoDashboard() {
    const [cookies, setCookie, removeCookie] = useCookies(['userid', 'username']);
-
+console.log("Cookies:", cookies);
    const [appointments, setAppointments] = useState([{ id: '', title: '', description: '', date: '', user_id: '' }]);
 
    const [editAppointment, setEditAppointment] = useState([{ id: '', title: '', description: '', date: '', user_id: '' }]);
