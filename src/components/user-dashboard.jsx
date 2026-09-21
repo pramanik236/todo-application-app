@@ -166,7 +166,7 @@ export function ToDoDashboard() {
                   <div className="fs" onClick={closeNav} style={{cursor:"pointer"}} >&times;</div>
                </div>
                <div className="fs-6 fw-bold mt-2">
-                  Hello ! {cookies['username']}  
+                  Hello ! {cookies.username}  
                </div>
                <div className="my-4">
                   <Link className="bi bi-pencil-square text-decoration-none"> Tasks</Link>
@@ -197,7 +197,7 @@ export function ToDoDashboard() {
                </div>
             </div>
 
-            <div className="bg-light d-flex flex-row justify-content-between  flex-row  mt-1 pt-3 pb-3 padding">
+            <div className="bg-light d-flex flex-row justify-content-between  mt-1 pt-3 pb-3 padding">
                <div className="d-flex flex-row">
                   <div>
                      <select className="form-select">
@@ -227,7 +227,7 @@ export function ToDoDashboard() {
                      </div>
 
                   </div>
-                  <button data-bs-toggle="modal" data-bs-target="#newAppointment" className="btn btn-primary bi bi-plus-circle"> New Appointment</button>
+                  <button data-bs-toggle="modal" data-bs-target="#newAppointment" className="btn btn-primary fontsizefornew bi bi-plus-circle"> New Appointment</button>
                </div>
 
                <div className="modal fade" id="newAppointment">
@@ -236,7 +236,7 @@ export function ToDoDashboard() {
                         <form onSubmit={formikAdd.handleSubmit}>
                            
                            <div className="modal-header">
-                              <h3>New Appointment</h3>
+                              <h4>New Appointment</h4>
                            </div>
 
                            <div className="modal-body">

@@ -3,7 +3,9 @@
 }
 
 body {
+    padding: 0;
     margin: 0;
+    
 }
 
 /* Main application */
@@ -107,10 +109,10 @@ body {
         font-size: 24px;
     }
     .textsize{
-        font-size: 15px;
+        font-size: 13px;
     }
     .textsize1{
-        font-size: 12px;
+        font-size: 11px;
     }
 
     /* .nav {
@@ -148,6 +150,7 @@ body {
 }
 .userlogin{
     width: 100%;
+    padding: 20px;
     padding-top: 18px;
     padding-bottom: 18px;
     border-radius: 10px;
@@ -157,6 +160,7 @@ box-shadow:  20px 20px 60px #bebebe,
 }
 .register{
      width: 100%;
+     padding: 20px;
     padding-top: 18px;
     padding-bottom: 18px;
      border-radius: 10px;
@@ -290,5 +294,8 @@ box-shadow:  20px 20px 60px #bebebe,
      padding-top: 10px;
     padding-bottom: 10px;
     width:100%;
+}
+.fontsizefornew{
+  font-size: 15px;
 }
 }
