@@ -2,6 +2,7 @@ import axios from "axios";
 import {useFormik} from "formik";
 import { useCookies } from "react-cookie";
 import {Link,useNavigate} from "react-router-dom";
+import '../App.css';
 
 export function ToDoLogin(props){
 
@@ -36,10 +37,12 @@ export function ToDoLogin(props){
     })
 
     return(
-        <div className={`${props.width}`}>
-             <form onSubmit={formik.handleSubmit}>
+        //${props.width} 
+         <div className="d-flex justify-content-center align-items-center ">
+        <div className=" userlogin d-flex justify-content-center align-items-center flex-column bg-info"  >
+             <form onSubmit={formik.handleSubmit}  >
                 {
-                    (props.title==='')?<span></span>: <h3>{props.title}</h3>
+                    (props.title==='')?<span></span>: <h3 className="text-center">{props.title}</h3>
                 }
                 <dl>
                     <dt>User Id</dt>
@@ -49,9 +52,10 @@ export function ToDoLogin(props){
                 </dl>
                 <button type="submit" className="btn btn-warning w-100">Login</button>
             </form>
-            <div className="mt-3">
-                <Link to="/register">New User Register</Link>
+            <div className="mt-3 ">
+                <Link to="/register" className="text-danger" >New User Register</Link>
             </div>
+        </div>
         </div>
     )
 }

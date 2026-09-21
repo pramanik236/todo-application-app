@@ -1,7 +1,8 @@
 import axios from "axios"
 import { useFormik } from "formik"
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import '../App.css';
 
 export function ToDoRegister(props){
 
@@ -58,10 +59,12 @@ export function ToDoRegister(props){
     }
 
     return(
-        <div className={props.width}>
+        //{props.width}
+        <div className="d-flex justify-content-center align-items-center ">
+        <div className="register d-flex justify-content-center align-items-center flex-column bg-info">
              <form onSubmit={formik.handleSubmit}>
                 {
-                    (props.title==='')?<span></span>:<h3>{props.title}</h3>
+                    (props.title==='')?<span></span>:<h3 className="text-center">{props.title}</h3>
                 }
                 <dl>
                     <dt>User Id</dt>
@@ -77,8 +80,9 @@ export function ToDoRegister(props){
                 <button type="submit" className="btn btn-primary w-100">Register</button>
             </form>
             <div className="mt-2">
-                <Link to="/login">Existing User Login</Link>
+                <Link to="/login" className="text-danger " >Existing User Login</Link>
             </div>
+        </div>
         </div>
     )
 }

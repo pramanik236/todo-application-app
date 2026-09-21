@@ -3,7 +3,7 @@ import { ToDoRegister } from "./todo-register";
 
 export function ToDoHome(){
     return(
-        <div className="d-flex justify-content-center align-items-baseline mt-4" style={{height:'500px'}}>
+        <div className="d-flex justify-content-center align-items-baseline mt-4" z>
             <div>
                 <ul className="nav nav-tabs">
                     <li className="nav-item"> <a data-bs-toggle="tab" href="#login" className="nav-link active"> User Login </a> </li>

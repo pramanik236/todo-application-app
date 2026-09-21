@@ -6,6 +6,7 @@ import { useDispatch} from "react-redux";
 import { data, Link, useNavigate } from "react-router-dom";
 import { addToShare } from "../slicers/task-slicer.jsx";
 import store from "../store/store.jsx";
+import '../App.css';
 
 // {
 //       "user_id": "john_nit",
@@ -23,6 +24,15 @@ export function ToDoDashboard() {
    const [editAppointment, setEditAppointment] = useState([{ id: '', title: '', description: '', date: '', user_id: '' }]);
 
    const [searchString, setSearchString] = useState('');
+
+   const [isSidebarOpen,setIsSidebarOpen]=useState(false);
+
+   const openNav = () =>{
+      setIsSidebarOpen(true);
+   }
+   const closeNav=() =>{
+      setIsSidebarOpen(false);
+   }
 
    let navigate = useNavigate();
    let dispatch = useDispatch();
@@ -147,12 +157,16 @@ export function ToDoDashboard() {
 
 
    return (
-      <div className="row p-2">
-         <div className="col-2 d-flex flex-column justify-content-between bg-light" style={{ height: '600px' }}>
-            <div>
-               <h3 className="mt-4">Task Manager</h3>
+      <div className="row p-2 dashboard4">
+
+         <div className={` col-2 sidebar flex-column justify-content-between bg-light ${isSidebarOpen? "sidebar-open": "sidebar-close"}`} >
+            <div className=" ">
+               <div className="d-flex justify-content-between align-items-center">
+                  <h3 className="mt-4">Task Manager</h3>
+                  <div className="fs" onClick={closeNav} style={{cursor:"pointer"}} >&times;</div>
+               </div>
                <div className="fs-6 fw-bold mt-2">
-                  Hello ! {cookies['username']}
+                  Hello ! {cookies['username']}  
                </div>
                <div className="my-4">
                   <Link className="bi bi-pencil-square text-decoration-none"> Tasks</Link>
@@ -171,18 +185,19 @@ export function ToDoDashboard() {
             <div>
                <button onClick={handleSignout} className="btn btn-danger w-100">Signout</button>
             </div>
-
+              
          </div>
 
-         <div className="col-10">
-            <div className="bg-light mt-1 p-3">
-               <div className="input-group">
+         <div className="col-10 dashboard4">
+            <div className=" d-flex align-items-center justify-content-between bg-light mt-1 pt-3 pb-3 padding">
+               <div className="fs-2 btn btn-dark btnopen dashboard1 me-3" onClick={openNav} style={{cursor:"pointer"}} >&#9776; </div>
+               <div className="input-group  dashboard2">
                   <input type="text" onChange={handleSearchChange} placeholder="search appointments" className="form-control" />
                   <button className="bi bi-search btn btn-dark"></button>
                </div>
             </div>
 
-            <div className="bg-light d-flex flex-row justify-content-between  flex-row mt-1 p-3">
+            <div className="bg-light d-flex flex-row justify-content-between  flex-row  mt-1 pt-3 pb-3 padding">
                <div className="d-flex flex-row">
                   <div>
                      <select className="form-select">
@@ -199,7 +214,7 @@ export function ToDoDashboard() {
                </div>
 
                <div>
-                  <button data-bs-target="#shared" data-bs-toggle="offcanvas" className="btn btn-dark bi bi-share mx-2 position-relative"> <span className="badge bg-danger rounded rounded-circle position-absolute">{store.getState().appointmentsCount}</span> </button>
+                  <button data-bs-target="#shared" data-bs-toggle="offcanvas" className=" share btn btn-dark bi bi-share mx-2 position-relative"> <span className="badge bg-danger rounded rounded-circle position-absolute">{store.getState().appointmentsCount}</span> </button>
                   <div className="offcanvas offcanvas-end" id="shared">
                      <div className="offcanvas-header">
                         <h3>Shared Appointments</h3>
@@ -244,7 +259,6 @@ export function ToDoDashboard() {
 
                            <div className="modal-footer">
                               <button data-bs-dismiss="modal" type="submit" className="btn btn-primary">Add</button>
-                              <button data-bs-dismiss="modal" type="button" className="btn btn-danger mx-2">Cancel</button>
                            </div>
 
                         </form>
@@ -257,11 +271,11 @@ export function ToDoDashboard() {
 
             </div>
 
-            <div className="mt-4 d-flex flex-wrap">
+            <div className="mt-4 d-flex flex-wrap dashboard4 dashboard5">
                {
                   (filteredAppointments.length === 0) ? <span>No Records Found</span> :
                      filteredAppointments.map(appointment =>
-                        <div key={appointment.id} className="card w-25  p-2 m-2">
+                        <div key={appointment.id} className="card card1 .dashboard4  p-2 m-2">
 
                            <div className="card-header fw-bold">
                               {appointment.title.toUpperCase()}
